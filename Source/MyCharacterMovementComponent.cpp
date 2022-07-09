@@ -117,6 +117,8 @@ void UMyCharacterMovementComponent::OnMovementModeChanged(EMovementMode Previous
 
 		UCapsuleComponent* Capsule = CharacterOwner->GetCapsuleComponent();
 		Capsule->SetCapsuleHalfHeight(Capsule->GetUnscaledCapsuleHalfHeight() + ClimbingCollisionShrinkAmount);
+
+		StopMovementImmediately();
 	}
 
 	Super::OnMovementModeChanged(PreviousMovementMode, PreviousCustomMode);
